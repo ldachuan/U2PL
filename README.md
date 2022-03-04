@@ -113,6 +113,7 @@ data/VOC2012
 ├── SegmentationClassAug
 └── SegmentationObject
 ```
+</details>
 
 Finally, the structure of dictionary ```data``` should be as follows:
 
@@ -132,7 +133,6 @@ data
     ├── SegmentationClassAug
     └── SegmentationObject
 ```
-</details>
 
 ### Prepare Pretrained Backbone
 
@@ -223,7 +223,7 @@ you are recommended to change the ```lr``` to ```0.02```).
 
 If you want to train a model on other split, you need to modify ```data_list``` and ```n_sup``` in ```config.yaml```.
 
-Due to the randomness of function ```torch.nn.functional.interpolate``` when ```mode="bilinear""```, 
+Due to the randomness of function ```torch.nn.functional.interpolate``` when ```mode="bilinear"```, 
 the results of semantic segmentation will not be the same EVEN IF a fixed random seed is set.
 
 Therefore, we recommend you run 3 times and get the average performance.
