@@ -233,7 +233,7 @@
   unlabeled images. A common practice is to select the highly confident predictions as the pseudo ground-truth,
   but it leads to a problem that most pixels may be left unused due to their unreliability. We argue that
   every pixel matters to the model training, even its prediction is ambiguous. Intuitively, an unreliable
-  prediction may get confused among the top classes (\textit{i.e.}, those with the highest probabilities),
+  prediction may get confused among the top classes (<i>i.e.</i>, those with the highest probabilities),
   however, it should be confident about the pixel not belonging to the remaining classes. Hence, such a pixel
   can be convincingly treated as a negative sample to those most unlikely categories. Based on this insight,
   we develop an effective pipeline to make sufficient use of unlabeled data. Concretely, we separate reliable
