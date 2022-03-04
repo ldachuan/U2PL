@@ -152,11 +152,11 @@
     <tr>
       <td align=center width=150px>
         <center><span style="font-size:20px"><a href="" target="_blank">
-              Yuchao Wang</a></span></center>
+              Yuchao Wang*</a></span></center>
       </td>
       <td align=center width=150px>
-        <center><span style="font-size:20px"><a href="https://github.com/Haochen-Wang409/" target="_blank">Haochen
-              Wang</a></span></center>
+        <center><span style="font-size:20px"><a href="https://github.com/Haochen-Wang409/" target="_blank">
+          Haochen Wang*</a></span></center>
       </td>
       <td align=center width=150px>
         <center><span style="font-size:20px"><a href="https://shenyujun.github.io/" target="_blank">Yujun
@@ -229,41 +229,42 @@
 
   <br>
 
-  In many real-world scenarios, rewards extrinsic to the agent are extremely sparse, or absent altogether. In such
-  cases, curiosity can serve as an intrinsic reward signal to enable the agent to explore its environment and learn
-  skills that might be useful later in its life. We formulate curiosity as the error in an agent's ability to predict
-  the consequence of its own actions in a visual feature space learned by a self-supervised inverse dynamics model. Our
-  formulation scales to high-dimensional continuous state spaces like images, bypasses the difficulties of directly
-  predicting pixels, and, critically, ignores the aspects of the environment that cannot affect the agent. The proposed
-  approach is evaluated in two environments: <i>VizDoom</i> and <i>Super Mario Bros</i>. Three broad settings are
-  investigated: 1) sparse extrinsic reward, where curiosity allows for far fewer interactions with the environment to
-  reach the goal; 2) exploration with no extrinsic reward, where curiosity pushes the agent to explore more efficiently;
-  and 3) generalization to unseen scenarios (e.g. new levels of the same game) where the knowledge gained from earlier
-  experience helps the agent explore new places much faster than starting from scratch.
+  The crux of semi-supervised semantic segmentation is to assign adequate pseudo-labels to the pixels of
+  unlabeled images. A common practice is to select the highly confident predictions as the pseudo ground-truth,
+  but it leads to a problem that most pixels may be left unused due to their unreliability. We argue that
+  every pixel matters to the model training, even its prediction is ambiguous. Intuitively, an unreliable
+  prediction may get confused among the top classes (\textit{i.e.}, those with the highest probabilities),
+  however, it should be confident about the pixel not belonging to the remaining classes. Hence, such a pixel
+  can be convincingly treated as a negative sample to those most unlikely categories. Based on this insight,
+  we develop an effective pipeline to make sufficient use of unlabeled data. Concretely, we separate reliable
+  and unreliable pixels via the entropy of predictions, push each unreliable pixel to a category-wise queue
+  that consists of negative samples, and manage to train the model with all candidate pixels. Considering the
+  training evolution, where the prediction becomes more and more accurate, we adaptively adjust the threshold
+  for the reliable-unreliable partition. Experimental results on various benchmarks and training settings
+  demonstrate the superiority of our approach over the state-of-the-art alternatives.
 
-  <br>
-  <br>
-  <hr>
+<!--  <br>-->
+<!--  <br>-->
+<!--  <hr>-->
 
-  <center id="demoVideo">
-    <h1>Demo Video</h1>
-  </center>
-  <table align=center width=600px>
-    <tr>
-      <td align=center width=600px>
-        <iframe width="800" height="450" src="" frameborder="0" allowfullscreen></iframe>
-      </td>
-    </tr>
-  </table>
+<!--  <center id="demoVideo">-->
+<!--    <h1>Demo Video</h1>-->
+<!--  </center>-->
+<!--  <table align=center width=600px>-->
+<!--    <tr>-->
+<!--      <td align=center width=600px>-->
+<!--        <iframe width="800" height="450" src="" frameborder="0" allowfullscreen></iframe>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </table>-->
 
-  <br>
-  <hr>
+<!--  <br>-->
+<!--  <hr>-->
 
   <center id="sourceCode">
     <h1>Source Code</h1>
   </center>
-  <center>We have released the TensorFlow based implementation for on the github page. It builds upon OpenAI Gym with
-    factorized RL environment wrappers which are generally useful. Try our code!</center>
+  <center>We have released the PyTorch based implementation for on the github page. Try our code!</center>
   <table align=center width=900px>
     <tr>
       <!-- <p style="margin-top:4px;"></p> -->
